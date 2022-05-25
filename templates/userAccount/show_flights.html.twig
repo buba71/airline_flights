@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<!-- Page Content -->
+<div class="container">
+  <div class="card border-0 shadow my-5" id="home_page">
+
+    <div class="card-body p-5">
+      <h1 class="fw-light">Bienvenu {{ app.user.firstName }}, voici nos vols</h1>
+      <table class="table table-striped mt-5 text-light">
+        <thead>
+            <tr>
+                <th>Numéro de vol</th>
+                <th>Ville de départ</th>
+                <th>Ville d'arrivée</th>
+                <th>Jour de départ</th>
+                <th>Heure de départ</th>
+                <th>Jour d'arrivée</th>
+                <th>Heure d'arrivée</th>
+                <th>Places</th>
+                <th>Prix</th>
+                <th>Réduction</th>
+            </tr>
+        </thead>
+      </table>
+      
+      <div style="height: 400px"></div>
+      <div>
+        {% include "home/footer.html.twig" %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

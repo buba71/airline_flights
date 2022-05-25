@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Airline Flying!{% endblock %}
 
 {% block body %}
 
@@ -11,7 +11,7 @@
     <div class="card-body p-5">
       <h1 class="fw-light">Bienvenue sur le site Airline Fliying</h1>
       <p class="lead">Afin d'accéder à la liste de nos vols, veuillez vous connecter</p>
-      <a href="" class="btn btn-primary mt-5" style="background-color:">Accéder à nos vols ></a>
+      <a href="{{ path('show_flights')}}" class="btn btn-primary mt-5" style="background-color:">Accéder à nos vols ></a>
       <div style="height: 400px"></div>
       <div>
         {% include "home/footer.html.twig" %}
