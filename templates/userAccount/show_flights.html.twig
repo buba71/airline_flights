@@ -23,6 +23,26 @@
                 <th>Réduction</th>
             </tr>
         </thead>
+        <tbody>
+          {% for flight in flights %}
+            <tr>
+              <th class="text-light">{{ flight.flightNumber  }}</th>
+              <th class="text-light">{{ flight.departureCity  }}</th>
+              <th class="text-light">{{ flight.arrivalCity }}</th>
+              <th class="text-light">{{ flight.departureDate | date('d M Y')  }}</th>
+              <th class="text-light">{{ flight.departureTime | date('H: i')  }}</th>
+              <th class="text-light">{{ flight.arrivalDate | date('d M Y') }}</th>
+              <th class="text-light">{{ flight.arrivalTime | date('H:i')  }}</th>
+              <th class="text-light">{{ flight.seatsNumber  }}</th>
+              <th class="text-light">{{ flight.price | format_currency('EUR')  }}</th>
+              <th class="text-light text-center">
+                {% if flight.discount %}
+                  <i class="fa fa-star"></i>
+                {% endif %}
+              </th>
+            </tr>
+          {% endfor %}
+        </tbody>
       </table>
       
       <div style="height: 400px"></div>

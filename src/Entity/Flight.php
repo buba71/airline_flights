@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\FlightRepository;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: FlightRepository::class)]
@@ -17,10 +18,16 @@ class Flight
     private $flightNumber;
 
     #[ORM\Column(type: 'datetime')]
+    private $departureDate;
+
+    #[ORM\Column(type: 'datetime')]
     private $departureTime;
 
     #[ORM\Column(type: 'string', length: 255)]
     private $departureCity;
+
+    #[ORM\Column(type: 'datetime')]
+    private $arrivalDate;
 
     #[ORM\Column(type: 'datetime')]
     private $arrivalTime;
@@ -53,6 +60,17 @@ class Flight
 
         return $this;
     }
+    public function getDepartureDate(): ?\DateTimeInterface
+    {
+        return $this->departureDate;
+    }
+
+    public function setDepartureDate(\DateTimeInterface $departureDate): self
+    {
+        $this->departureDate = $departureDate;
+
+        return $this;
+    }
 
     public function getDepartureTime(): ?\DateTimeInterface
     {
@@ -74,6 +92,18 @@ class Flight
     public function setDepartureCity(string $departureCity): self
     {
         $this->departureCity = $departureCity;
+
+        return $this;
+    }
+
+    public function getArrivalDate(): ?\DateTimeInterface
+    {
+        return $this->arrivalDate;
+    }
+
+    public function setArrivalDate(\DateTimeInterface $arrivalDate): self
+    {
+        $this->arrivalDate = $arrivalDate;
 
         return $this;
     }
