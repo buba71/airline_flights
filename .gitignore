@@ -17,5 +17,5 @@ yarn-error.log
 ###< symfony/webpack-encore-bundle ###
 
 ###< assets ###
-/assets/images/
+
 ###> assets ###
