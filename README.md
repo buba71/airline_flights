@@ -11,6 +11,8 @@ cd airline_flights
 
 composer install
 
+yarn install
+
 yarn run dev
 ````
 
