@@ -2,14 +2,14 @@
 
 namespace App\Form;
 
+use App\Entity\City;
 use App\Entity\Flight;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -32,7 +32,9 @@ class FlightType extends AbstractType
                     'class' => ' my-2'
                 ]
             ])
-            ->add('departureCity', TextType::class, [
+            ->add('departureCity', EntityType::class, [
+                'class' => City::class,
+                'choice_value' => 'name',
                 'label' => 'Ville de départ',
                 'attr' => [
                     'class' => 'my-2'
@@ -52,7 +54,9 @@ class FlightType extends AbstractType
                     'class' => 'my-2'
                 ]
             ])
-            ->add('arrivalCity', TextType::class, [
+            ->add('arrivalCity', EntityType::class, [
+                'class' => City::class,
+                'choice_value' => 'name',
                 'label' => 'Ville d\'arrivée',
                 'attr' => [
                     'class' => ' my-2'

@@ -14,11 +14,8 @@ class CityType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('Name', TypeTextType::class, [
+            ->add('name', TypeTextType::class, [
                 'label' => 'Nom'
-            ])
-            ->add('submit', SubmitType::class, [
-                'label' => 'Ajouter'
             ])
         ;
     }

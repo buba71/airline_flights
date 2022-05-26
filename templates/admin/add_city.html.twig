@@ -13,7 +13,12 @@
 
       <div class="form-city mt-5">
         {{ form_start(form) }}
-            {{form(form) }}
+            {{ form_row(form.name) }}
+
+            <div class="form-controls">
+              <button type="submit" class="btn btn-primary">Valider</button>
+              <a href="{{ path('admin_index') }}" type="button" class="btn btn-secondary mx-2">Annuler</a>
+            </div>
         {{ form_end(form) }}
       </div>
       
