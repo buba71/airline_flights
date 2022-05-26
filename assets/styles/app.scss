@@ -1,0 +1,40 @@
+@import "~bootstrap/scss/bootstrap";
+
+/* Set a background image by replacing the URL below */
+body {
+    background: url('../images/airplane.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+  }
+
+  #home_page {
+      background-color: #121212;
+      color: rgb(226, 225, 225);
+      opacity: 0.7;
+  }
+
+  table th{
+      color: $green-100;
+  }
+
+  footer a {
+      color: inherit;
+  }
+
+  .nav-tabs .nav-link.active {
+    background-color: #121212;
+    color: rgb(226, 225, 225);
+    opacity: 0.7;
+  }
+
+  .nav-tabs .nav-link {
+    background-color: $gray-300;
+    color: $gray-600;
+    opacity: 0.7;
+  }
+  
+  .alert.alert-success {
+      opacity: 0.7;
+  }

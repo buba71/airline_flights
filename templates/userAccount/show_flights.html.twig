@@ -1,0 +1,56 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<!-- Page Content -->
+<div class="container">
+  <div class="card border-0 shadow my-5" id="home_page">
+
+    <div class="card-body p-5">
+      <h1 class="fw-light">Bienvenue {{ app.user.firstName }}, voici nos vols.</h1>
+      <table class="table table-striped mt-5 text-light">
+        <thead>
+            <tr>
+                <th>Numéro de vol</th>
+                <th>Ville de départ</th>
+                <th>Ville d'arrivée</th>
+                <th>Jour de départ</th>
+                <th>Heure de départ</th>
+                <th>Jour d'arrivée</th>
+                <th>Heure d'arrivée</th>
+                <th>Places</th>
+                <th>Prix</th>
+                <th>Réduction</th>
+            </tr>
+        </thead>
+        <tbody>
+          {% for flight in flights %}
+            <tr>
+              <th class="text-light">{{ flight.flightNumber  }}</th>
+              <th class="text-light">{{ flight.departureCity  }}</th>
+              <th class="text-light">{{ flight.arrivalCity }}</th>
+              <th class="text-light">{{ flight.departureDate | date('d M Y')  }}</th>
+              <th class="text-light">{{ flight.departureTime | date('H: i')  }}</th>
+              <th class="text-light">{{ flight.arrivalDate | date('d M Y') }}</th>
+              <th class="text-light">{{ flight.arrivalTime | date('H:i')  }}</th>
+              <th class="text-light">{{ flight.seatsNumber  }}</th>
+              <th class="text-light">{{ flight.price | format_currency('EUR')  }}</th>
+              <th class="text-light text-center">
+                {% if flight.discount %}
+                  <i class="fa fa-star"></i>
+                {% endif %}
+              </th>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      
+      <div style="height: 400px"></div>
+      <div>
+        {% include "home/footer.html.twig" %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

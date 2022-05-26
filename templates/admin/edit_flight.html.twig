@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<!-- Page Content -->
+<div class="container">
+  <div class="card border-0 shadow my-5" id="home_page">
+
+    <div class="card-body p-5">
+      <div class="admin-item-title">
+        <h1 class="fw-light d-inline">Modifier le vol</h1>
+      </div>
+
+      <div class="edit_fligh-form mt-5">
+        {{ form_start(form) }}
+          {{ form(form) }}
+        {{ form_end(form)}}
+      </div>
+      
+      
+      <div style="height: 400px"></div>
+      <div>
+        {% include "home/footer.html.twig" %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
